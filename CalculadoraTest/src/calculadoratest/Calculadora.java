@@ -8,7 +8,8 @@ public class Calculadora {
     
    
     public int sumar(int x, int y){
-        return x + y;
+       int r = x+y;
+	   return r;
     }
     
     /**
