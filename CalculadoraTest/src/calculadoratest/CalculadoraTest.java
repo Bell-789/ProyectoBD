@@ -6,9 +6,7 @@ import calculadoratest.Calculadora;
  */
 public class CalculadoraTest {
     
-    /**
-     * Este metodo de prueba, prueba el metodo suma() de la clase calculadora.
-     */
+  
     public void testSuma(){
         System.out.println("Prueba del metodo suma()");
         int x = 2;
@@ -21,9 +19,7 @@ public class CalculadoraTest {
         if(resultadoEsperado != resultado) throw new RuntimeException("Error: valor esperado " + resultadoEsperado + " ,valor obtenido " + resultado);
     }
     
-    /**
-     * Este metodo de prueba, prueba el metodo resta() de la clase calculadora.
-     */
+
     public void testResta(){
         System.out.println("Prueba del metodo resta()");
         int x = 2;
