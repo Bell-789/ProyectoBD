@@ -6,12 +6,7 @@ package calculadoratest;
  */
 public class Calculadora {
     
-    /**
-     * metodo que suma sus parametros.
-     * @param x primer parametro para la suma;
-     * @param y segundo parametro para la suma;
-     * @return la suma de los valores X y Y.
-     */
+   
     public int sumar(int x, int y){
         return x + y;
     }
