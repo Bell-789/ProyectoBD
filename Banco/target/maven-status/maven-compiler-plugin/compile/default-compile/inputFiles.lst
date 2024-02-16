@@ -1,0 +1,13 @@
+D:\Documents\NetBeansProjects\Banco\src\main\java\Dominio\Cliente.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Dominio\Conexion.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Persistencia\DAO\ClienteDAO.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Persistencia\Excepciones\Excepciones.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Dominio\Domicilio.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Guis\Registroo.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Persistencia\DTO\ClienteNewDTO.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Persistencia\DTO\DomicilioNewDTO.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Persistencia\IConexionBD.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Persistencia\ConexionBD.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Guis\Prueba.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Persistencia\DAO\IClienteDAO.java
+D:\Documents\NetBeansProjects\Banco\src\main\java\Guis\Inicio.java
