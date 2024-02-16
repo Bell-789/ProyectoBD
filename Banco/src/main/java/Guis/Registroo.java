@@ -9,42 +9,35 @@ import Persistencia.DTO.ClienteNewDTO;
 import Persistencia.DTO.DomicilioNewDTO;
 import Persistencia.IConexionBD;
 import java.sql.Date;
-import com.toedter.calendar.JDateChooser;
-import java.awt.Frame;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Registroo extends javax.swing.JFrame {
 
     /**
-     *hola
+     * hola
      */
     public Registroo() {
         cliente = new Cliente();
         domicilio = new Domicilio();
-        conexionbd =  new ConexionBD(url, pelos, contra);
-        clientedao =  new ClienteDAO(conexionbd);
+        conexionbd = new ConexionBD(url, pelos, contra);
+        clientedao = new ClienteDAO(conexionbd);
         initComponents();
-        
+
     }
-    
+
     Domicilio domicilio;
-    Cliente cliente;  
+    Cliente cliente;
     IConexionBD conexionbd;
     private static final Logger LOG = Logger.getLogger(ClienteDAO.class.getName());
-    String url = "jdbc:mysql://localhost:3306";
+    String url = "jdbc:mysql://localhost/Banco";
     String pelos = "root";
     String contra = "tomatin789";
-    String driver = "com.mysql.jdbc.Driver";
     IClienteDAO clientedao;
 
-   
-           
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -205,55 +198,54 @@ public class Registroo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
-                cliente.setNombre(nombreTxt.getText());
+        cliente.setNombre(nombreTxt.getText());
         cliente.setApellidoP(ApellidoPTxt.getText());
         cliente.setApellidoM(ApellidoMTxt.getText());
         cliente.setUsuario(UsuarioTxt.getText());
         cliente.setContrasena(contrasenaTxt.getText());
-        domicilio.setColonia(coloniaTxt.getText());
-        domicilio.setCalle(calleTxt.getText());
-        domicilio.setNumero(numeroTxt.getText());
-
+        
         String fechaTexto = fechaNacimientoTxt.getText();
         DateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date fechaNacimiento = new Date(formatoFecha.parse(fechaTexto).getTime());
-            cliente.setFechaNacimiento(fechaNacimientoTxt.getText());
-            
+            cliente.setFechaNacimiento(fechaNacimiento);
         } catch (ParseException ex) {
             ex.printStackTrace();
         }
+        domicilio.setCalle(calleTxt.getText());
+        domicilio.setColonia(coloniaTxt.getText());
+        domicilio.setNum(numeroTxt.getText());
+
         ClienteNewDTO clienteDTO = new ClienteNewDTO();
         clienteDTO.setNombre(nombreTxt.getText());
         clienteDTO.setApellidoP(ApellidoPTxt.getText());
         clienteDTO.setApellidoM(ApellidoMTxt.getText());
         clienteDTO.setUsuario(UsuarioTxt.getText());
-        clienteDTO.setContraseña(contrasenaTxt.getText());
-        String fechaTexto2 = fechaNacimientoTxt.getText();
+        clienteDTO.setContrasena(contrasenaTxt.getText());
+       String fechaTexto2 = fechaNacimientoTxt.getText();
         DateFormat formatoFecha2 = new SimpleDateFormat("yyyy-MM-dd");
-     
         try {
-            Date fechaNacimiento = new Date(formatoFecha.parse(fechaTexto).getTime());
-            cliente.setFechaNacimiento(fechaNacimientoTxt.getText());
-            
+            Date fechaNacimiento2 = new Date(formatoFecha2.parse(fechaTexto2).getTime());
+            clienteDTO.setFechaNacimiento(fechaNacimiento2);
         } catch (ParseException ex) {
             ex.printStackTrace();
         }
-        
+
         DomicilioNewDTO domicilioNuevo = new DomicilioNewDTO();
         domicilioNuevo.setCalle(calleTxt.getText());
         domicilioNuevo.setColonia(coloniaTxt.getText());
-        domicilioNuevo.setNumero(numeroTxt.getText());
-        
-                try{ 
-            Cliente clientesAgregado = clientedao.agregarCliente(clienteDTO);
+        domicilioNuevo.setNum(numeroTxt.getText());
+
+        try {
+            // Agregar el cliente y el domicilio usando el DAO
+            Cliente clienteAgregado = clientedao.agregarCliente(clienteDTO);
             Domicilio domicilioAgregado = clientedao.agregarDomicilio(domicilioNuevo);
-            LOG.log(Level.INFO, clientesAgregado.toString());
+            LOG.log(Level.INFO, clienteAgregado.toString());
             LOG.log(Level.INFO, domicilioAgregado.toString());
-            
-        }  catch (Exception e){
+        } catch (Exception e) {
             LOG.log(Level.SEVERE, "No se pudo agregar", e);
-        }     
+        }
+           
     }//GEN-LAST:event_CrearActionPerformed
 
     /**

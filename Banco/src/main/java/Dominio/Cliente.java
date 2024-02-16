@@ -13,7 +13,7 @@ public class Cliente {
     private String nombre;
     private String apellidoP;
     private String apellidoM;
-    private String fechaNacimiento;
+    private Date fechaNacimiento;
     private String usuario;
     private String contrasena;
 
@@ -24,7 +24,8 @@ public class Cliente {
     
 
 // Constructor con todos los campos
-    public Cliente(int idCliente, String nombre, String apellidoP, String apellidoM, String fechaNacimiento, String usuario, String contrasena) {    
+
+    public Cliente(int idCliente, String nombre, String apellidoP, String apellidoM, Date fechaNacimiento, String usuario, String contrasena) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellidoP = apellidoP;
@@ -34,8 +35,7 @@ public class Cliente {
         this.contrasena = contrasena;
     }
 
-    // Constructor sin ID
-    public Cliente(String nombre, String apellidoP, String apellidoM, String fechaNacimiento, String usuario, String contrasena) {
+    public Cliente(String nombre, String apellidoP, String apellidoM, Date fechaNacimiento, String usuario, String contrasena) {
         this.nombre = nombre;
         this.apellidoP = apellidoP;
         this.apellidoM = apellidoM;
@@ -44,7 +44,6 @@ public class Cliente {
         this.contrasena = contrasena;
     }
 
-    // Getter y Setter
     public int getIdCliente() {
         return idCliente;
     }
@@ -77,11 +76,11 @@ public class Cliente {
         this.apellidoM = apellidoM;
     }
 
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -100,6 +99,6 @@ public class Cliente {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
-    
+
+   
 }

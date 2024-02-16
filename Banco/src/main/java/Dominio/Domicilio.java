@@ -10,7 +10,7 @@ public class Domicilio {
     private int idDomicilio;
     private String colonia;
     private String calle;
-    private String numero;
+    private String num;
     private int idCliente;
 
     
@@ -19,24 +19,22 @@ public class Domicilio {
     }
 
     // Constructor con todos los campos
-    public Domicilio(int idDomicilio, String colonia, String calle, String numero, int idCliente) {
+
+    public Domicilio(int idDomicilio, String colonia, String calle, String num, int idCliente) {
         this.idDomicilio = idDomicilio;
         this.colonia = colonia;
         this.calle = calle;
-        this.numero = numero;
-        this.idCliente = idCliente;
-    }
- 
-    // Constructor sin el ID
-    public Domicilio(String colonia, String calle, String numero, int idCliente) {
-        this.colonia = colonia;
-        this.calle = calle;
-        this.numero = numero;
+        this.num = num;
         this.idCliente = idCliente;
     }
 
-    
-    //Getter y Setter
+    public Domicilio(String colonia, String calle, String num, int idCliente) {
+        this.colonia = colonia;
+        this.calle = calle;
+        this.num = num;
+        this.idCliente = idCliente;
+    }
+
     public int getIdDomicilio() {
         return idDomicilio;
     }
@@ -61,12 +59,12 @@ public class Domicilio {
         this.calle = calle;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getNum() {
+        return num;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setNum(String num) {
+        this.num = num;
     }
 
     public int getIdCliente() {
@@ -76,6 +74,6 @@ public class Domicilio {
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
-
+   
   
 }

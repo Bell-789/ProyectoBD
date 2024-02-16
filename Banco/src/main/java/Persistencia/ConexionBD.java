@@ -27,7 +27,9 @@ public class ConexionBD  implements IConexionBD {
 
     @Override
     public Connection crearConexion() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Connection conexion = DriverManager.getConnection(url, pelos, contra);
+        LOG.log(Level.INFO, "Conexión exitosa ", url);
+        return conexion;   
     }
 
    

@@ -12,30 +12,30 @@ public class ClienteNewDTO {
     private String nombre;
     private String apellidoP;
     private String apellidoM;
-    private String fechaNacimiento;
+    private Date fechaNacimiento;
     private String usuario;
-    private String contraseña;
+    private String contrasena;
 
     public ClienteNewDTO() {
     }
 
-    public ClienteNewDTO(int idCliente, String nombre, String apellidoP, String apellidoM, String fechaNacimiento, String usuario, String contraseña) {
+    public ClienteNewDTO(int idCliente, String nombre, String apellidoP, String apellidoM, Date fechaNacimiento, String usuario, String contrasena) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellidoP = apellidoP;
         this.apellidoM = apellidoM;
         this.fechaNacimiento = fechaNacimiento;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
-    public ClienteNewDTO(String nombre, String apellidoP, String apellidoM, String fechaNacimiento, String usuario, String contraseña) {
+    public ClienteNewDTO(String nombre, String apellidoP, String apellidoM, Date fechaNacimiento, String usuario, String contrasena) {
         this.nombre = nombre;
         this.apellidoP = apellidoP;
         this.apellidoM = apellidoM;
         this.fechaNacimiento = fechaNacimiento;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public int getIdCliente() {
@@ -70,11 +70,11 @@ public class ClienteNewDTO {
         this.apellidoM = apellidoM;
     }
 
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -86,16 +86,13 @@ public class ClienteNewDTO {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     
-
-    
-
 }

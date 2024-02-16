@@ -14,24 +14,24 @@ public class DomicilioNewDTO {
 
     private String colonia;
     private String calle;
-    private String numero;
+    private String num;
     private int idCliente;
 
     public DomicilioNewDTO() {
     }
 
-    public DomicilioNewDTO(int idDomicilio, String colonia, String calle, String numero, int idCliente) {
+    public DomicilioNewDTO(int idDomicilio, String colonia, String calle, String num, int idCliente) {
         this.idDomicilio = idDomicilio;
         this.colonia = colonia;
         this.calle = calle;
-        this.numero = numero;
+        this.num = num;
         this.idCliente = idCliente;
     }
 
-    public DomicilioNewDTO(String colonia, String calle, String numero, int idCliente) {
+    public DomicilioNewDTO(String colonia, String calle, String num, int idCliente) {
         this.colonia = colonia;
         this.calle = calle;
-        this.numero = numero;
+        this.num = num;
         this.idCliente = idCliente;
     }
 
@@ -59,12 +59,12 @@ public class DomicilioNewDTO {
         this.calle = calle;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getNum() {
+        return num;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setNum(String num) {
+        this.num = num;
     }
 
     public int getIdCliente() {
